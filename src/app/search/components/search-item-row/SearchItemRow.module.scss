@@ -1,0 +1,49 @@
+@use '../../../styles/colors';
+
+.rowLink {
+  display: block;
+  color: colors.$black;
+  background: colors.$bg-grey; /* Same as body background */
+  border: 1.5px solid colors.$black;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.rowLink:hover,
+.rowLink:focus {
+  background: #000;
+  color: #fff;
+}
+
+.itemContent {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  min-width: 0;
+}
+
+.symbol {
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.currency {
+  color: #555;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.name {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rowLink:hover .currency,
+.rowLink:focus .currency {
+  color: #fff;
+}

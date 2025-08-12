@@ -3,15 +3,13 @@ import styles from './SearchBar.module.scss';
 import Spinner from '@/components/spinner/Spinner';
 import { useState, useRef } from 'react';
 import { SearchItem, SearchResponse } from '@/types/SearchResponse';
-
-import Link from 'next/link';
 import ToastNotification from '@/components/toast-notification/ToastNotification';
+import SearchItemRow from '../search-item-row/SearchItemRow';
 
 export default function SearchBar() {
   const [input, setInput] = useState('');
   const [results, setResults] = useState<SearchItem[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-
   const [toastMessage, setToastMessage] = useState('');
   const debounceRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -71,7 +69,7 @@ export default function SearchBar() {
           placeholder="Type to search..."
           value={input}
           onChange={handleChange}
-          className={styles.inputStyle}
+          className={styles.searchBarInput}
         />
         {isLoading && (
           <div className={styles.resultsLoading}>
@@ -81,17 +79,7 @@ export default function SearchBar() {
         <div className={styles.resultList}>
           {!isLoading &&
             results.map((item) => (
-              <Link key={item.symbol} href={`/detail/${item.symbol}`}>
-                <div className={styles.resultItem}>
-                  <div className={styles.symbolCurrency}>
-                    <span className={styles.symbol}>{item.symbol}</span>
-                    <span className={styles.currency}>{item.currency}</span>
-                  </div>
-                  <span className={styles.name} title={item.name}>
-                    {item.name}
-                  </span>
-                </div>
-              </Link>
+              <SearchItemRow key={item.symbol} item={item} />
             ))}
         </div>
       </div>

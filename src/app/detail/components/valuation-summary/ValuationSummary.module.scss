@@ -1,5 +1,9 @@
+@use '../../../styles/colors';
+
 .valuation {
+  flex: 1;
   background: #f9f7fa;
+  color: colors.$black;
   border-radius: 6px;
   padding: 1.1rem 1rem 1.2rem 1.3rem;
   box-shadow: 0 1px 3px rgba(80, 50, 120, 0.05);

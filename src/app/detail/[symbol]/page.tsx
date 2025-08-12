@@ -14,7 +14,7 @@ export default async function Page({
 }) {
   const { symbol } = await params;
   const fetchCompanyInfo = async (symbol: string): Promise<CompanyOverview> => {
-    const url = `${process.env.API_URL}/query?function=OVERVIEW&symbol=${symbol}&apikey=${process.env.TOKEN}`;
+    const url = `${process.env.API_URL}/query?function=OVERVIEW&symbol=${symbol}&apikey=${process.env.API_TOKEN}`;
 
     try {
       const res = await fetch(url, { next: { revalidate: 300 } });
@@ -27,11 +27,15 @@ export default async function Page({
       }
 
       const data = await res.json();
+      console.log(data);
 
       if (data.Information?.match(ERROR_API_RATE_LIMIT)) {
         throw new Error('Too many requests');
       }
 
+      if (data && typeof data === 'object' && Object.keys(data).length === 0) {
+        throw new Error('404');
+      }
       return data;
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {

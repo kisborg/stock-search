@@ -1,10 +1,13 @@
 import SearchBar from './components/search-bar/SearchBar';
+import styles from './SearchPage.module.scss';
 
 export default function Page() {
   return (
-    <div style={{ padding: 16 }}>
-      <h2>Search</h2>
-      <SearchBar />
+    <div className={styles.background}>
+      <div className={styles.inner}>
+        <h2>Stock-search App</h2>
+        <SearchBar />
+      </div>
     </div>
   );
 }

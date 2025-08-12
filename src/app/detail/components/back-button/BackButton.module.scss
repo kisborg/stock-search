@@ -7,17 +7,18 @@
   font-size: 1rem;
   display: flex;
   align-items: center;
-  background: #eee;
+  background: #0073b5;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-weight: 500;
   transition: background 0.15s, color 0.15s;
+  color: #fff;
 
   &:hover,
   &:focus {
-    background: #2294f2;
-    color: #fff;
+    background: #000;
+
     outline: none;
   }
 }

@@ -1,4 +1,7 @@
+@use '../../../styles/colors';
+
 .ratings {
+  color: colors.$black;
   background: #fff9f7;
   border-radius: 6px;
   padding: 1rem 1rem 1.1rem 1.3rem;

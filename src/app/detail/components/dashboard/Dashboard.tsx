@@ -16,7 +16,7 @@ export default function Dashboard({ data }: DashboardProps) {
     <div className={styles.dashboard}>
       <DashboardHeader data={data} />
       <CompanyInfo data={data} />
-      <div className={styles.rowGrid}>
+      <div className={styles.flexRow}>
         <FinancialHighlights data={data} />
         <ValuationSummary data={data} />
       </div>

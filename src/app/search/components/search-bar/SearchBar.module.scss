@@ -28,6 +28,7 @@
 }
 
 .resultsLoading {
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
   height: 30px;
@@ -37,36 +38,17 @@
   width: 100%;
 }
 
-.resultItem {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 30px;
+.searchBarInput {
+  font-size: 1.3rem;
+  padding: 0.8em 1em;
+  border: 2px solid #ccc;
+  border-radius: 0;
   width: 100%;
-  border-bottom: 1px solid #eee;
-  font-size: 14px;
-  padding-left: 4px;
-  padding-right: 4px;
+  transition: border 0.2s;
+  outline: none;
   box-sizing: border-box;
-}
 
-.symbolCurrency {
-  display: flex;
-  gap: 8px;
-}
-
-.symbol {
-  font-weight: 600;
-}
-
-.currency {
-  color: #777;
-}
-
-.name {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  max-width: 130px;
-  text-align: right;
+  &:focus {
+    border-color: #000;
+  }
 }

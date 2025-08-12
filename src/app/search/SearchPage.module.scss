@@ -1,0 +1,32 @@
+@use '../styles/colors';
+
+.background {
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(
+    to bottom,
+    colors.$yellow 0%,
+    colors.$yellow 50vh,
+    var(--background) 50vh,
+    var(--background) 100%
+  );
+
+  h2 {
+    color: colors.$black;
+    font-size: 5rem;
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 200px;
+    @media (max-width: 900px) {
+      font-size: 3rem;
+    }
+  }
+}
+
+.inner {
+  position: relative;
+  padding: 2rem 16px 16px 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}

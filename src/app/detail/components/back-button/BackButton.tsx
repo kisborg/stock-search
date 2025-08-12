@@ -11,7 +11,7 @@ export default function BackButton() {
       className={styles.backButton}
       aria-label="Go Back"
     >
-      &#8592; Back
+      ← Back to Search
     </button>
   );
 }

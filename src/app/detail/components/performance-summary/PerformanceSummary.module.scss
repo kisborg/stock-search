@@ -1,4 +1,7 @@
+@use '../../../styles/colors';
+
 .performance {
+  color: colors.$black;
   background: #f5fbfa;
   border-radius: 6px;
   padding: 1rem 1rem 1.1rem 1.3rem;

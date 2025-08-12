@@ -1,4 +1,8 @@
+@use '../../../styles/colors';
+
 .financials {
+  color: colors.$black;
+  flex: 1;
   background: #f8fafc;
   border-radius: 6px;
   padding: 1.1rem 1rem 1.2rem 1.3rem;
