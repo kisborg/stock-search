@@ -4,10 +4,11 @@ import { stripNumberingFromKeys } from '@/utils/helper-functions';
 import { NextRequest } from 'next/server';
 
 const TOKEN = process.env.API_TOKEN;
+const API_URL = process.env.API_URL;
 
 export async function GET(req: NextRequest): Promise<Response> {
   const query = req.nextUrl.searchParams.get('q') ?? '';
-  const url = `${process.env.API_URL}/query?function=SYMBOL_SEARCH&keywords=${query}&apikey=${TOKEN}`;
+  const url = `${API_URL}/query?function=SYMBOL_SEARCH&keywords=${query}&apikey=${TOKEN}`;
   try {
     const res = await fetch(url, { next: { revalidate: 300 } });
     const data = await res.json();

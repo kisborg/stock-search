@@ -81,7 +81,7 @@ export default function SearchBar() {
         <div className={styles.resultList}>
           {!isLoading &&
             results.map((item) => (
-              <Link key={item.symbol} href={`/details/${item.symbol}`}>
+              <Link key={item.symbol} href={`/detail/${item.symbol}`}>
                 <div className={styles.resultItem}>
                   <div className={styles.symbolCurrency}>
                     <span className={styles.symbol}>{item.symbol}</span>

@@ -10,12 +10,12 @@ interface ToastNotificationProps {
   handleClose: () => void;
 }
 
-const ToastNotification: React.FC<ToastNotificationProps> = ({
+export default function ToastNotification({
   message,
   type,
   open,
   handleClose,
-}) => {
+}: ToastNotificationProps) {
   useEffect(() => {
     if (open) {
       const timer = setTimeout(() => {
@@ -43,6 +43,4 @@ const ToastNotification: React.FC<ToastNotificationProps> = ({
       </button>
     </div>
   );
-};
-
-export default ToastNotification;
+}
