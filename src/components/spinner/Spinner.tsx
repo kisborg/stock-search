@@ -1,5 +1,12 @@
 import styles from './Spinner.module.scss';
 
-export default function Spinner() {
-  return <span className={styles.spinnerStyle} />;
+type SpinnerProps = {
+  toCenter?: boolean;
+};
+export default function Spinner({ toCenter }: SpinnerProps) {
+  return (
+    <span
+      className={`${styles.spinnerStyle} ${toCenter ? styles.toCenter : ''}`}
+    />
+  );
 }

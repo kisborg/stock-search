@@ -1,7 +1,7 @@
 import styles from './CompanyInfo.module.scss';
-import { DashboardProps } from '../dashboard/Dashboard';
+import { CompanyOverview } from '@/types/DetailResponse';
 
-export default function CompanyInfo({ data }: DashboardProps) {
+export default function CompanyInfo({ data }: { data: CompanyOverview }) {
   return (
     <section className={styles.info}>
       <h2>About</h2>

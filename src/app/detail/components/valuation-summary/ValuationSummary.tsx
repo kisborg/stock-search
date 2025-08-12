@@ -1,8 +1,7 @@
 import type { CompanyOverview } from '@/types/DetailResponse';
 import styles from './ValuationSummary.module.scss';
-import { DashboardProps } from '../dashboard/Dashboard';
 
-export default function ValuationSummary({ data }: DashboardProps) {
+export default function ValuationSummary({ data }: { data: CompanyOverview }) {
   return (
     <div className={styles.valuation}>
       <h3>Valuation</h3>

@@ -1,3 +1,4 @@
+'use client';
 import type { CompanyOverview } from '@/types/DetailResponse';
 import DashboardHeader from '../dashboard-header/DashboardHeader';
 import CompanyInfo from '../company-info/CompanyInfo';
@@ -6,23 +7,25 @@ import ValuationSummary from '../valuation-summary/ValuationSummary';
 import PerformanceSummary from '../performance-summary/PerformanceSummary';
 import AnalystRatings from '../analyst-ratings/AnalystRatings';
 import styles from './Dashboard.module.scss';
+import { use } from 'react';
 
 export interface DashboardProps {
-  data: CompanyOverview;
+  data: Promise<CompanyOverview>;
 }
 
 export default function Dashboard({ data }: DashboardProps) {
+  const companyData = use(data);
   return (
     <div className={styles.dashboard}>
-      <DashboardHeader data={data} />
-      <CompanyInfo data={data} />
+      <DashboardHeader data={companyData} />
+      <CompanyInfo data={companyData} />
       <div className={styles.flexRow}>
-        <FinancialHighlights data={data} />
-        <ValuationSummary data={data} />
+        <FinancialHighlights data={companyData} />
+        <ValuationSummary data={companyData} />
       </div>
       <div className={styles.flexRow}>
-        <PerformanceSummary data={data} />
-        <AnalystRatings data={data} />
+        <PerformanceSummary data={companyData} />
+        <AnalystRatings data={companyData} />
       </div>
     </div>
   );

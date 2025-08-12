@@ -1,0 +1,41 @@
+@use '../../../styles/colors';
+
+.graphSection {
+  margin-top: 0.5rem;
+  padding: 1rem;
+  background: #fcfcfc;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  max-width: 900px;
+  width: 100%;
+  .graphHeader {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    h2 {
+      color: colors.$black;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.intervalSelector {
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 0.75rem;
+}
+.intervalSelector button {
+  border: none;
+  background: #eee;
+  color: #2294f2;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.intervalSelector button.active,
+.intervalSelector button:hover {
+  background: #2294f2;
+  color: #fff;
+}

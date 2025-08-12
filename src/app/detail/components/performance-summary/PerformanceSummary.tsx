@@ -1,8 +1,11 @@
 import type { CompanyOverview } from '@/types/DetailResponse';
 import styles from './PerformanceSummary.module.scss';
-import { DashboardProps } from '../dashboard/Dashboard';
 
-export default function PerformanceSummary({ data }: DashboardProps) {
+export default function PerformanceSummary({
+  data,
+}: {
+  data: CompanyOverview;
+}) {
   return (
     <div className={styles.performance}>
       <h3>Stock Performance</h3>

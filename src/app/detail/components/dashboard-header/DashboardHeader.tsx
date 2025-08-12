@@ -1,8 +1,7 @@
 import type { CompanyOverview } from '@/types/DetailResponse';
 import styles from './DashboardHeader.module.scss';
-import { DashboardProps } from '../dashboard/Dashboard';
 
-export default function DashboardHeader({ data }: DashboardProps) {
+export default function DashboardHeader({ data }: { data: CompanyOverview }) {
   return (
     <header className={styles.header}>
       <h1>

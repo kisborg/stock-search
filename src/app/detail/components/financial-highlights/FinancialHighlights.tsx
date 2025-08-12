@@ -1,8 +1,11 @@
 import type { CompanyOverview } from '@/types/DetailResponse';
 import styles from './FinancialHighlights.module.scss';
-import { DashboardProps } from '../dashboard/Dashboard';
 
-export default function FinancialHighlights({ data }: DashboardProps) {
+export default function FinancialHighlights({
+  data,
+}: {
+  data: CompanyOverview;
+}) {
   return (
     <div className={styles.financials}>
       <h3>Financials</h3>
