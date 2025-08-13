@@ -3,8 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Favorites.module.scss';
 import Link from 'next/link';
+import FavoriteStockRow from './FavoriteStockRow';
 
-type FavoriteStock = {
+export type FavoriteStock = {
   symbol: string;
   name: string;
   currency: string;
@@ -50,23 +51,11 @@ export default function Favorites() {
             <div className={styles.emptyText}>No favorites yet.</div>
           ) : (
             favorites.map((item) => (
-              <div key={item.symbol} className={styles.stockRow}>
-                <Link
-                  href={`/detail/${item.symbol}`}
-                  className={styles.stockLink}
-                  tabIndex={0}
-                >
-                  <span className={styles.symbol}>{item.symbol}</span>
-                  <span className={styles.name}>{item.name}</span>
-                  <span className={styles.currency}>{item.currency}</span>
-                </Link>
-                <button
-                  className={styles.removeButton}
-                  onClick={() => removeFavorite(item.symbol)}
-                >
-                  Remove
-                </button>
-              </div>
+              <FavoriteStockRow
+                item={item}
+                onRemove={removeFavorite}
+                key={item.symbol}
+              />
             ))
           )}
         </div>
