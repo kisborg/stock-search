@@ -1,4 +1,4 @@
-import { ERROR_API_RATE_LIMIT } from '@/contants/error-strings';
+import { ERROR_API_RATE_LIMIT } from '@/constants/error-strings';
 import { SearchItem } from '@/types/SearchResponse';
 import { stripNumberingFromKeys } from '@/utils/helper-functions';
 import { NextRequest } from 'next/server';

@@ -1,0 +1,122 @@
+@use '../../app/styles/colors';
+
+.favorites {
+  position: fixed;
+  top: 32px;
+  right: 32px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.favButton {
+  background: colors.$black;
+  color: colors.$bg-white;
+  font-weight: 500;
+  padding: 0.7em 1.2em;
+  border: none;
+  border-radius: 0.3em;
+  cursor: pointer;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.09);
+  transition: background 0.15s;
+  letter-spacing: 0.04em;
+}
+
+.favButton:hover,
+.favButton:focus {
+  background: #333;
+}
+
+.dropdown {
+  background: colors.$bg-grey;
+  color: colors.$black;
+  border: 1.5px solid colors.$black;
+  min-width: 340px;
+  margin-top: 8px;
+  border-radius: 0.25em;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.14);
+  padding: 0.7em 0.7em 0.2em 0.7em;
+}
+
+.stockRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.7em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.symbol {
+  font-weight: bold;
+  min-width: 60px;
+  flex-shrink: 0;
+}
+
+.name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.currency {
+  min-width: 36px;
+  color: #555;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.removeButton {
+  margin-left: 0.7em;
+  background: colors.$bg-white;
+  color: colors.$black;
+  border: 1px solid colors.$black;
+  border-radius: 0.2em;
+  padding: 0.2em 0.6em;
+  font-size: 0.97em;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.removeButton:hover,
+.removeButton:focus {
+  background: #f73d3d;
+  color: colors.$bg-white;
+}
+
+.emptyText {
+  color: #999;
+  padding: 0.6em 0;
+  text-align: center;
+}
+
+.stockLink {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+  min-width: 0;
+}
+.stockLink:hover,
+.stockLink:focus {
+  text-decoration: underline;
+}
+
+.starButton {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  cursor: pointer;
+  padding: 0;
+  z-index: 2;
+  transition: filter 0.18s;
+  outline: none;
+}

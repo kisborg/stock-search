@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import Favorites from '@/components/favorites/Favorites';
 
 export const metadata: Metadata = {
   title: 'Stock search',
@@ -13,7 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Favorites />
+        {children}
+      </body>
     </html>
   );
 }

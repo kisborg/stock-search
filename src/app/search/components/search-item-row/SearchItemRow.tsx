@@ -14,7 +14,6 @@ export default function SearchItemRow({ item }: SearchItemRowProps) {
       href={`/detail/${item.symbol}`}
       className={styles.rowLink}
       tabIndex={0}
-      aria-label={`Details for ${item.symbol}`}
     >
       <div className={styles.itemContent}>
         <span className={styles.symbol}>{item.symbol}</span>

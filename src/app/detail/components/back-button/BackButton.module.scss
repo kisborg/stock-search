@@ -1,3 +1,5 @@
+@use '../../../styles/colors';
+
 .backButton {
   position: absolute;
   top: 24px;
@@ -13,11 +15,11 @@
   cursor: pointer;
   font-weight: 500;
   transition: background 0.15s, color 0.15s;
-  color: #fff;
+  color: colors.$bg-white;
 
   &:hover,
   &:focus {
-    background: #000;
+    background: colors.$black;
 
     outline: none;
   }

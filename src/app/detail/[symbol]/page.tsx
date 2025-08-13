@@ -4,7 +4,7 @@ import { Suspense } from 'react';
 import Dashboard from '../components/dashboard/Dashboard';
 import styles from './DetailPage.module.scss';
 import BackButton from '../components/back-button/BackButton';
-import { ERROR_API_RATE_LIMIT } from '@/contants/error-strings';
+import { ERROR_API_RATE_LIMIT } from '@/constants/error-strings';
 import { notFound } from 'next/navigation';
 import Graph from '../components/graph/Graph';
 import { TimeSeriesData } from '@/types/ChartDataResponse';
@@ -51,9 +51,9 @@ export default async function Page({
     symbol: string
   ): Promise<TimeSeriesData> => {
     const url = `${process.env.API_URL}/query?function=TIME_SERIES_MONTHLY_ADJUSTED&symbol=${symbol}&apikey=${process.env.API_TOKEN}`;
-    const res = await fetch(url, { next: { revalidate: 300 } });
+
     try {
-      const res = await fetch(url, { next: { revalidate: 300 } });
+      const res = await fetch(url, { next: { revalidate: 3600 } });
       if (res.status === 404) {
         throw new Error('404');
       }

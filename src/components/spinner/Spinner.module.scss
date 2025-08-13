@@ -1,3 +1,5 @@
+@use '../../app/styles/colors';
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -11,7 +13,7 @@
   display: inline-block;
   width: 40;
   height: 40;
-  border: 3px solid #fff;
+  border: 3px solid colors.$bg-white;
   border-top: 3px solid #333;
   border-radius: 50%;
   animation: spin 1s linear infinite;

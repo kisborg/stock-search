@@ -28,17 +28,9 @@ export default function ToastNotification({
   if (!open) return null;
 
   return (
-    <div
-      className={`${styles.toast} ${styles[`toast--${type}`]}`}
-      role="alert"
-      aria-live="assertive"
-    >
+    <div className={`${styles.toast} ${styles[`toast--${type}`]}`} role="alert">
       <span>{message}</span>
-      <button
-        onClick={handleClose}
-        className={styles.closeButton}
-        aria-label="Close"
-      >
+      <button onClick={handleClose} className={styles.closeButton}>
         ×
       </button>
     </div>

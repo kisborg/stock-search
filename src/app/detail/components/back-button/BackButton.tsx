@@ -9,7 +9,6 @@ export default function BackButton() {
     <button
       onClick={() => router.push('/search')}
       className={styles.backButton}
-      aria-label="Go Back"
     >
       ← Back to Search
     </button>

@@ -3,7 +3,7 @@
 .rowLink {
   display: block;
   color: colors.$black;
-  background: colors.$bg-grey; /* Same as body background */
+  background: colors.$bg-grey;
   border: 1.5px solid colors.$black;
   text-decoration: none;
   transition: background 0.2s, color 0.2s;
@@ -13,8 +13,8 @@
 
 .rowLink:hover,
 .rowLink:focus {
-  background: #000;
-  color: #fff;
+  background: colors.$black;
+  color: colors.$bg-white;
 }
 
 .itemContent {
@@ -45,5 +45,5 @@
 
 .rowLink:hover .currency,
 .rowLink:focus .currency {
-  color: #fff;
+  color: colors.$bg-white;
 }
